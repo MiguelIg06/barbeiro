@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cliente</title>
+    <title>Cadastro de Cliente - Barbearia Bruno Almeida</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'clientes/style.css' %}">
 </head>
 <body>
-    <h1>Cadastro de Novo Cliente</h1>
-
-    <form method="post">
-        {% csrf_token %} <!-- segurança do django para formularios-->
-        {{ form.as_p }}
-        <button type="submit">Salvar Cliente</button> <!-- O botão que o usuário vai clicar pra enviar o formulário.-->
-    </form>
-
-    <p><a href="{% url 'lista_clientes' %}">Voltar para a lista de clientes</a></p>
+    <div class="cadastro-container">
+        <div class="cadastro-imagem">
+            </div>
+        <div class="cadastro-formulario">
+            <h1>Cadastre-se</h1>
+            <p>Junte-se a nós e acesse um universo de estilos.</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.full_name.id_for_label }}">Nome completo</label>
+                    {{ form.full_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">E-mail</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.tel.id_for_label }}">Telefone (celular)</label>
+                    {{ form.tel }}
+                </div>
+                <button type="submit" class="btn btn-cadastro">Cadastre-se</button>
+                <p class="login-link">Já possui uma conta? <a href="#">Login</a></p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
