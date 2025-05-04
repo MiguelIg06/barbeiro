@@ -29,7 +29,7 @@
                 {% if error_message %}
                     <p class="error">{{ error_message }}</p>
                 {% endif %}
-                <p class="cadastro-link">Não tem uma conta? <a href="{% url 'cadastro_cliente' %}">Cadastre-se</a></p>
+                <p class="cadastro-link">Não tem uma conta? <a href="{% url 'clientes:cadastro_cliente' %}">Cadastre-se</a></p>
             </form>
         </div>
     </div>

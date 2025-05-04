@@ -1,11 +1,207 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Css -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'clientes/home.css' %}">
+    <!-- Título -->
     <title>Barbearia Bruno Almeida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <h1>Bem-vindo!</h1>
+    <!-- Landing Page -->
+
+    <!-- Barra de Navegação -->
+    <section id="landing-page">
+        <nav id="nav-bar">
+           <a href="{% url 'clientes:home'%}"> <img id="logo" src="{% static 'clientes/imagens/logoCortada.png' %}" alt="logo da Barbearia" ></a>
+            <button id="menu"><i class="fa-solid fa-bars"></i></button>
+            <div id="nav-bar-menu">
+                <ul>
+                    <li><a href="#about-us" class="links navbar-link">Sobre</a></li>
+                    <li><a href="#our-services" class="links navbar-link">Serviços</a></li>
+                    <li><a href="{% url 'clientes:login' %}" class="links navbar-link">Agendamento</a></li>
+                                        <li><a href="{% url 'clientes:cadastro_cliente' %}" class="links navbar-link">Cadastre-se</a></li>
+                    <li><a href="{% url 'clientes:login' %}" class="links navbar-link">Login</a></li>
+                </ul>
+            <div id="icons">
+                     <a href="https://web.facebook.com/brunobarber2016" target="_blank"><i class="fa-brands fa-facebook links social-media-icons"></i></a>
+                     <a href="https://www.instagram.com/barbeariabrunoalmeida/tagged/" target="_blank"><i class="fa-brands fa-instagram links social-media-icons"></i></a>
+                     <a href="https://api.whatsapp.com/send?phone=5511948010855&text=Ol%C3%A1,+gostaria+de+agendar+um+hor%C3%A1rio" target="_blank"><i class="fab fa-whatsapp links social-media-icons"></i> </a>
+            </div>
+            </div>
+        </nav>
+        <!-- Início da Landing Page -->
+        <div id="opening-message">
+            <div id="opening-message-container">
+                <h1>Tradição no atendimento, excelência nos cortes. <br><span style="color: #daa554;"> Agende seu horário</span> e descubra como é ser tratado com o cuidado que você merece.</h1>
+            </div>
+        </div>
+        <div id="landing-page-bakground">
+            <img src="{%static 'clientes/imagens/oficialBackground.jpeg'%}" alt="plano de fundo da landing page">
+        </div>
+        <div id="comment-card">
+            <h3>Review</h3>
+            <div id="comment-card-container">
+                <img src="{% static 'clientes/imagens/perfilImg.jpg' %}" alt="foto de perfil de um cliente">
+                <p>Adilson Fideles<br><small>2 meses atrás</small></p>
+            </div>
+            <p>muito obrigado pelo atendimento, barba e sobrancelha top... você é fera! 👏</p>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="about-us">
+        <video controls id="vid" autoplay loop muted>
+            <source src="{% static 'clientes/imagens/vid-barbeiroNoSound.mp4' %}" type="video/mp4">
+        </video>
+        <div id="about-us-container">
+            <h1>Sobre Nós</h1>
+            <p>
+                A Barbearia Bruno Almeida é sinônimo de estilo, qualidade e bom atendimento. Unimos tradição e modernidade para oferecer cortes, barbas e cuidados pessoais em um ambiente acolhedor e descontraído. Aqui, cada cliente é tratado com atenção aos detalhes e muita dedicação.</p>
+        </div>
+    </section>
+
+    <!-- Transforme seu visual -->
+    <section id="look">
+        <div id="look-container">
+            <h1>Transforme seu visual!</h1>
+            <p>Seja para renovar o visual, manter o estilo ou apenas relaxar,<br> estamos aqui para transformar sua ida à barbearia em um momento único, pensado para você.</p>
+        </div>
+        <img id="look-image" src="{% static 'clientes/imagens/perfil.jpg' %}" alt="Foto de perfil do barbeiro">
+    </section>
+
+    <!-- Nossos Serviços -->
+    <main>
+        <section id="our-services">
+            <h1>Nossos serviços</h1>
+            <p>Ao escolher um corte de cabelo, é importante considerar o seu tipo de cabelo, estilo pessoal e preferências. Também é importante conversar com o barbeiro para obter conselhos personalizados.</p>
+            <div id="our-services-container">
+                <div class="card">
+                    <img src="{% static 'clientes/imagens/hairCut.jpg' %}" alt="um rapaz com um belo corte de cabelo">
+                    <img class="barber-tools" src="{% static 'clientes/imagens/comb.png'%}" alt="máquina de cortar cabelo">
+                    <p>Corte de Cabelo <br><span style="color: #daa554;">R$ 35</span></p>
+                </div>
+                <div class="card">
+                    <img src="{% static '/clientes/imagens/corte3_resized.jpg' %}" alt="um rapaz com o cabelo louro e corte moicano">
+                    <img class="barber-tools" src="{%static '/clientes/imagens/dyeBrush.png'%}" alt="máquina de cortar cabelo">
+                    <p>Platinado <br><span style="color: #daa554;">R$ 120</span></p>
+                </div>
+                <div class="card">
+                    <img src="{%static '/clientes/imagens/beard.png'%}" alt="um rapaz com a barba feita e cabelo cortado">
+                    <img class="barber-tools" src="{% static '/clientes/imagens/hairClipper.png' %}" alt="máquina de cortar cabelo">
+                    <p>Barba <br><span style="color: #daa554;">R$ 23</span></p>
+                </div>
+                <div class="card">
+                    <img src= "{%  static 'clientes/imagens/pezinho.jpg'%}" alt="um rapaz com o pezinho em dia">
+                    <img class="barber-tools" src="{% static '/clientes/imagens/razor.svg' %}" alt="máquina de cortar cabelo">
+                    <p>pezinho <br><span style="color: #daa554;">R$ 10</span></p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de imagens -->
+        <section class="carousel" id="carrossel">
+            <h1>Catálogo de Cortes</h1>
+            <div class="container">
+                <button class="arrow-left control" aria-label="Previous Image"><i class="fa-solid fa-arrow-left-long"></i></button>
+                <button class="arrow-right control" aria-label="Next Image"><i class="fa-solid fa-arrow-right-long"></i></button>
+                <div class="gallery-wrapper">
+                    <div class="gallery" id="gallery">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut1.jpg' %}" alt="Corte de cabelo 1" class="item current-item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut2.jpg' %}" alt="Corte de cabelo 2" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut3.jpg' %}" alt="Corte de cabelo 3" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut4.jpg' %}" alt="Corte de cabelo 4" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut5.jpg' %}" alt="Corte de cabelo 5" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut6.jpg' %}" alt="Corte de cabelo 6" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut7.jpg' %}" alt="Corte de cabelo 7" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut8.jpg' %}" alt="Corte de cabelo 8" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut9.jpg' %}" alt="Corte de cabelo 9" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut10.jpg' %}" alt="Corte de cabelo 10" class="item">
+                        <img src="{% static 'clientes/imagens/carouselImgs/hairCut11.jpg' %}" alt="Corte de cabelo 11" class="item">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="local">
+        <h1>Localização</h1>
+        <div id="maps">
+            <p>Rua Teófilo Ottoní, 35 - Jardim Oliveiras, Taboão da Serra - SP, 06765-307</p>
+            <iframe id="ifram" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.4471725222716!2d-46.77894112541935!3d-23.62415156390061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce546f8fb0a4bf%3A0x35bd0be703206d54!2sRua%20Te%C3%B3filo%20Otton%C3%AD%2C%2035%20-%20Jardim%20Oliveiras%2C%20Tabo%C3%A3o%20da%20Serra%20-%20SP%2C%2006765-307!5e0!3m2!1spt-BR!2sbr!4v1700528803053!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Horários da barbearia -->
+    <section id="opening-hours">
+        <div id="on-work">
+            <img src="{% static 'clientes/imagens/workTime.png' %} " alt= "uma moldura personalizada com uma foto do barbeiro com seu cliente">
+        </div>
+        <div id="time-card-container">
+            <div id="time-card">
+                <h1>Horários</h1>
+                <p>Nosso horário de trabalho é flexível e conveniente, começando de manhã e terminando à noite</p>
+                <div id="horary">
+                    <div>
+                        <h3>terça a sexta</h3>
+                        <h3>9:00 - 20:00</h3>
+                    </div>
+                    <hr style="font-weight: lighter;">
+                    <div>
+                        <h3>Sábado</h3>
+                        <h3>8:00 - 20:00</h3>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3>Domingo e segunda</h3>
+                        <h3>Fechado</h3>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Mensagem -->
+    <section id="care-message">
+        <h1>Agende com a barbearia que se <span style="color: #daa554;">importa</span> com você!</h1>
+    </section>
+
+
+    <!-- Rodapé -->
+    <footer id="footer">
+        <div id="barber-info">
+            <div id="barber-name">
+                <img src="{% static 'clientes/imagens/barberTools' %}" alt="uma tesoura e um pente">
+                <h2> Bruno Almeida</h2>
+            </div>
+            <p>A barbearia Bruno Almeida é uma equipe de profissionais apaixonados e experientes que se dedicam a fornecer penteados da mais alta qualidade</p>
+            <div id="social-media">
+                <a href="https://web.facebook.com/brunobarber2016/photos" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/barbeariabrunoalmeida/tagged/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div id="contacts">
+            <h2>Contatos</h2>
+            <p><i class="fa-solid fa-phone"></i> +55 (11) 94801-0855</p>
+            <p><i class="fa-solid fa-location-dot"></i> Rua Teófilo Ottoní, 35 - Jardim Oliveiras</p>
+        </div>
+    </footer>
+    <div id="copyrights">
+        <p>Copyrights © 2023 <span style="color: #daa554;">Barbearia Bruno Almeida</span></p>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module" src="{% url 'clientes:home' %}"></script>
+    <!-- Biblioteca de Icones -->
+    <script src="https://kit.fontawesome.com/8b450a9b91.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
